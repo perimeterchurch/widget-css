@@ -1,0 +1,18 @@
+.mpp-innerpage--back {
+	display: none !important;
+}
+
+#mapContainer {
+    display: none;
+}
+#map {
+    display: none;
+}
+#mapAddress {
+    display: none;
+}
+
+.mppw-product-description {
+    font-family: 'sweet-sans-pro', 'Noto Sans', Helvetica, sans-serif;
+    color: red;
+}
