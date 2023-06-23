@@ -1,0 +1,42 @@
+.mpp-innerpage--back {
+	display: none !important;
+}
+
+#mapContainer {
+    display: none;
+}
+#map {
+    display: none;
+}
+#mapAddress {
+    display: none;
+}
+.singlePriceContainer {
+    display: none;
+}
+
+.mppw-product-description {
+    font-family: 'sweet-sans-pro', 'Noto Sans', Helvetica, sans-serif;
+    color: red;
+}
+
+
+#singlePriceContainer {
+    display: none;
+}
+#singlePriceValue {
+    display: none;
+}
+.option-qty {
+    display: none;
+}
+.option-price {
+    display: none;
+}
+.option-name {
+    font-family: var(--root-font-face);
+    font-weight: 500;
+}
+#registrationTotalContainer {
+    display: none;
+}
