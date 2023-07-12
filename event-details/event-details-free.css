@@ -16,10 +16,9 @@
 }
 
 .mppw-product-description {
-    font-family: 'sweet-sans-pro', 'Noto Sans', Helvetica, sans-serif;
+    font-family: var(--root-font-face);
     color: red;
 }
-
 
 #singlePriceContainer {
     display: none;
@@ -34,9 +33,22 @@
     display: none;
 }
 .option-name {
-    font-family: var(--root-font-face);
+    font-family: 'sweet-sans-pro', 'Noto Sans', Helvetica, sans-serif;
     font-weight: 500;
 }
 #registrationTotalContainer {
     display: none;
+}
+.mppw-product-options {
+    font-family: 'sweet-sans-pro', 'Noto Sans', Helvetica, sans-serif;
+    color: #111111;
+    font-size: 16px;
+}
+
+/*--------------------------------------------*/
+/* CSS Color Variables                        */
+/*--------------------------------------------*/
+:host {
+    --form-field-border: #09243F;
+    --form-field-border--active: #09243F;
 }
