@@ -17,13 +17,13 @@
 /*--------------------------------------------*/
 :host {
     --root-text-color: #111111;
-    --root-font-size: 15px;
+    --root-font-size: 16px;
     --root-line-height: 24px;
     --primary: #60BBE9;
     --secondary: #09243F;
     --form-field-bgcolor: #f9f9f9;
     --form-field-border: #09243F;
-    --form-field-border--active: #60BBE9;
+    --form-field-border--active: #09243F;
     --form-valid: #42bc34;
     --form-invalid: #dc3545;
     --form-btn-primary-text: #fff;
@@ -40,7 +40,7 @@
     --card-header-bgcolor: #fdfdfd;
     --box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.35);
     --progress-pledged: #60BBE9;
-    --progress-received: #000;
+    --progress-received: #111;
     --root-font-face: 'sweet-sans-pro','Sweet Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
