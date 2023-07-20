@@ -1,0 +1,63 @@
+
+:host {
+      --root-font-face: 'sweet-sans-pro','Sweet Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.mppw-form-field__label, .mppw-form-field__alt-label-content {
+	font-family: 'sweet-sans-pro','Sweet Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+	font-weight: bold;
+}
+
+.mppw-form-field__control.mppw-form-field_alt-control, .mppw-form-field-alt.mpp-mt-10   {
+	background-color: #ffffff !important;
+	color: #ffffff !important;
+	background: #ffffff !important;
+}
+
+.mpp-innerpage--back {
+	display: none !important;
+}
+
+#mapContainer {
+    display: none;
+}
+#map {
+    display: none;
+}
+#mapAddress {
+    display: none;
+}
+.singlePriceContainer {
+    display: none;
+}
+
+.mppw-product-description {
+    font-family: 'sweet-sans-pro', 'Noto Sans', Helvetica, sans-serif;
+    color: red;
+}
+
+
+#singlePriceContainer {
+    display: none;
+}
+#singlePriceValue {
+    display: none;
+}
+.option-qty {
+    display: none;
+}
+.option-price {
+    display: none;
+}
+.option-name {
+    font-family: var(--root-font-face);
+    font-weight: 500;
+}
+#registrationTotalContainer {
+    display: none;
+}
+
+.mppw-form-field__label {
+	font-family: 'sweet-sans-pro','Sweet Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
