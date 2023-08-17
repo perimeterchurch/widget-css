@@ -5,7 +5,7 @@
 
 
 #updateMyInfoContainer {
-	display: none;
+	display: none !important;
 }
 
 .mppw-form-field__label, .mppw-form-field__alt-label-content {
