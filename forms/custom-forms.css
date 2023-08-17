@@ -3,6 +3,11 @@
       --root-font-face: 'sweet-sans-pro','Sweet Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+
+.updateMyInfoContainer {
+	display: none;
+}
+
 .mppw-form-field__label, .mppw-form-field__alt-label-content {
 	font-family: 'sweet-sans-pro','Sweet Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 	font-weight: bold;
