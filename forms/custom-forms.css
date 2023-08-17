@@ -3,6 +3,9 @@
       --root-font-face: 'sweet-sans-pro','Sweet Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.color-section > .background, .color-section .color-section-center-col > .background {
+	background-color: orange;
+}
 
 #updateMyInfoContainer.mppw-form-field {
 	display: none !important;
