@@ -28,7 +28,7 @@
 }
 .pns_eventTextDiv {
     background-color: #fff;
-    color: #505050;
+    color: #262626;
     line-height: 20px !important;
     margin: 0;
     padding: 8px 0 10px;
@@ -37,13 +37,19 @@
 }
 .pns_eventTitle {
     font-weight: 700;
-}
-.pns_eventDate,
-.pns_eventTitle {
-    font-size: 15pt;
-    padding: 2px;
-    font-family: freight-display-pro, Arial, Helvetica, sans-serif;
+    font-size: 16pt;
+    font-family: 'freight-display-pro', 'freight display pro', Arial, Helvetica, sans-serif;
+    color: #09243F;
     letter-spacing: normal;
+    text-transform: none;
+}
+.pns_eventDate {
+    font-size: 16pt;
+    padding: 2px;
+    font-family: 'sweet sans pro', Arial, Helvetica, sans-serif;
+    color: #09243F;
+    letter-spacing: normal;
+    text-transform: none;
 }
 .pns_eventDateSpacing {
     padding: 0 10px;
