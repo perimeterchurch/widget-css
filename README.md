@@ -13,3 +13,6 @@ All files are hosted at https://www.jsdelivr.com/
 
 ## Make a new link
 Paste the raw link from Github to https://www.jsdelivr.com/github
+
+## @Latest
+If the page isn't updating with the proper CSS, make sure the link to the custom CSS has @latest after 'widgetcss' in the url.
