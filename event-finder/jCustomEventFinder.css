@@ -1,0 +1,101 @@
+.pns_spinnerImage {
+    height: auto;
+    margin: 0 0 3px 8px;
+    width: 20px;
+}
+.pns_flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.pns_flexCell {
+    cursor: pointer;
+    font-family: 'sweet-sans-pro', 'sweet sans pro', sweet-sans-pro, Arial, Helvetica, sans-serif;
+    margin: 12px;
+    min-width: 340px;
+    width: 340px;
+}
+.pns_flexCell:hover {
+    margin-top: 9px;
+}
+.pns_eventStripe {
+    background-color: #09243F;
+    height: 5px;
+}
+.pns_eventImage {
+    display: block !important;
+    width: 100%;
+}
+.pns_eventTextDiv {
+    background-color: #fff;
+    color: #505050;
+    line-height: 20px !important;
+    margin: 0;
+    padding: 8px 0 10px;
+    text-align: center;
+    width: 100%;
+}
+.pns_eventTitle {
+    font-weight: 700;
+}
+.pns_eventDate,
+.pns_eventTitle {
+    font-size: 15pt;
+    padding: 2px;
+    font-family: freight-display-pro, Arial, Helvetica, sans-serif;
+    letter-spacing: normal;
+}
+.pns_eventDateSpacing {
+    padding: 0 10px;
+}
+.pns_eventCampus {
+    display:none;
+    font-size: 11pt;
+    padding: 2px;
+    text-transform: uppercase;
+}
+.pns_eventFinderLinkDiv {
+    margin: 20px;
+    text-align: center;
+}
+.pns_eventFinderLink {
+    color: #60BBE9;
+    font-family: 'sweet-sans-pro', 'sweet sans pro', Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    text-decoration: none;
+}
+.pns_eventFinderLink:hover {
+    color: #606060;
+}
+.pns_outerContainer {
+    grid-gap: 0;
+    display: grid;
+    grid-template-columns: 3fr 20fr 3fr;
+}
+.pns_innerContainer {
+    grid-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    padding: 0;
+}
+img {
+    margin-bottom: 0 !important;
+}
+.pns_showMoreDiv {
+    margin: 0;
+    text-align: center;
+}
+.pns_showMoreBtn {
+    background-color: #f0f0f0;
+    border: 1px solid #909090;
+    border-radius: 5px;
+    color: #606060;
+    padding: 10px;
+    font-family: 'sweet-sans-pro', 'sweet sans pro', Arial, Helvetica, sans-serif;
+
+}
+.pns_showMoreBtn:hover {
+    background-color: #f4f4f4;
+    color: #404040;
+}
+/*# sourceMappingURL=main.59aeeca2.css.map*/
