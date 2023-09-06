@@ -1,3 +1,7 @@
+#detailsContainer {
+	background: blue;
+}
+
 .mpp-innerpage--special {
 	display: none !important;
 }
