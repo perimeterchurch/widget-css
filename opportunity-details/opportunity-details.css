@@ -1,5 +1,5 @@
 .mpp-innerpage--special {
-	display: none;
+	display: none !important;
 }
 
 .mpp-innerpage--back {
