@@ -14,5 +14,5 @@ All files are hosted at https://www.jsdelivr.com/
 ## Make a new link
 Paste the raw link from Github to https://www.jsdelivr.com/github
 
-## @Latest
-If the page isn't updating with the proper CSS, make sure the link to the custom CSS has @latest after 'widgetcss' in the url.
+## Getting the CSS to Update Properly
+You may notice that when you update the CSS here that it doesn't automatically update on the website. What you need to do is go to the file here in Github, click on 'History' in the top right of the screen, and see the latest version that you committed. There will be an SHA number you can copy. Then go back to the custom css file and after the 'widgetcss' part of the url add the @ symbol and past the number after that. Here's an example of what it will look like: customcss="https://cdn.jsdelivr.net/gh/perimeterchurch/widget-css@12dfcc6a07bb96396d678d35d3dd60b461173038/opportunity-details/opportunity-details.css".
