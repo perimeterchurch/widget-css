@@ -1,3 +1,9 @@
+.mpp-innerpage--contacts-wrapper.mpp-innerpage--special {
+ 	display: block !important;
+ }
+ .mpp-innerpage--special {
+ 	display: none;
+ }
 
 .mpp-innerpage--back {
 	display: none !important;
