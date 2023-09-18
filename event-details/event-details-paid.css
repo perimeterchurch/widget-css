@@ -1,3 +1,7 @@
+.updateMyInfoContainer {
+	display: none;
+}
+
 .mpp-innerpage--back {
 	display: none !important;
 }
