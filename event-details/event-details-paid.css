@@ -1,5 +1,5 @@
 #updateMyInfoContainer {
-	display: none;
+	display: none !important;
 }
 
 .mpp-innerpage--back {
