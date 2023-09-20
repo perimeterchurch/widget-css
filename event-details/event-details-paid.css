@@ -1,3 +1,7 @@
+.mpp-innerpage--map-info {
+	display: none !important;
+}
+
 @media only screen and (max-width: 415px)
 .mpp-innerpage--map-container {
     display: none !important;
