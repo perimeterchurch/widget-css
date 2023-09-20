@@ -7,7 +7,7 @@
 }
 
 #mapContainer {
-    display: none;
+    display: none !important;
 }
 #map {
     display: none;
