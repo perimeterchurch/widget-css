@@ -1,6 +1,12 @@
-#detailsContainer > #text, .mppw-ics-link, #detailsContainer > strong {
+.mppw-ics-link, #detailsContainer > strong {
 	display: none !important;
 }
+
+/* Gets rid of the stray text showing up on mobile, doesn't affect other text in this container */
+#detailsContainer {
+	font-size: 0px;
+}
+
 
 @media only screen and (max-width: 415px) {
 .mpp-innerpage--map-info {
