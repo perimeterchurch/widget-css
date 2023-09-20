@@ -1,4 +1,4 @@
-.mppw-ics-link, #detailsContainer > strong {
+#detailsContainer > #text, .mppw-ics-link, #detailsContainer > strong {
 	display: none !important;
 }
 
