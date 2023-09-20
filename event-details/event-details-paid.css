@@ -1,3 +1,7 @@
+/html/body/div[3]/main/section[2]/div/div[1]/div/div[2]/div[4]/mpp-event-details//div/div/div[2]/text(), .mppw-ics-link, #detailsContainer > strong {
+	display: none !important;
+}
+
 @media only screen and (max-width: 415px) {
 .mpp-innerpage--map-info {
 	display: none !important;
