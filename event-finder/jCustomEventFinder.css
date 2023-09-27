@@ -1,76 +1,87 @@
-.pns_spinnerImage {
-    height: auto;
-    margin: 0 0 3px 8px;
-    width: 20px;
-}
 .pns_flex {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+   /* justify-content: center;*/
+/* debbie's 5 mods below*/
+/*    justify-content: space-evenly;*/
+    align-items: flex-start;
 }
 .pns_flexCell {
     cursor: pointer;
     font-family: 'sweet-sans-pro', 'sweet sans pro', sweet-sans-pro, Arial, Helvetica, sans-serif;
-    margin: 12px;
+  /*  margin: 12px; */
     min-width: 340px;
     width: 340px;
+/*  debbie's 4 mods below */
+    word-break: break-word;
+    border: 1px solid #eee;
+    border-radius: 0px;
+    box-shadow: 4px 4px 10px #E3E2DE;
 }
 .pns_flexCell:hover {
     margin-top: 9px;
 }
 .pns_eventStripe {
-    display: none;
-    background-color: #09243F;
+    display: none !important;
+    background-color: #60BBE9;
     height: 3px;
 }
 .pns_eventImage {
     display: block !important;
-    width: 100%;
+   /* width: 100%; */
+/*  debbie's mods below */  
+    width: 340px; 
+    height: 190px; 
+    object-fit: cover; 
+    object-position: 100% 0;
 }
 .pns_eventTextDiv {
     background-color: #FBFAF8;
     color: #262626;
     line-height: 20px !important;
     margin: 0;
-    padding: 8px 0 10px;
+/*  padding: 8px 0 10px 0;*/  
+/*  debbie's mods below */  
+    padding: 25px 0 25px;
     text-align: center;
+    word-wrap: break-word;
     width: 100%;
 }
 .pns_eventTitle {
-    font-weight: 700;
-    font-size: 15pt;
+    font-size: 20pt;
     font-family: 'freight-display-pro', 'freight display pro', Arial, Helvetica, sans-serif;
     color: #09243F;
-    letter-spacing: normal;
+    letter-spacing: none;
     text-transform: none;
     line-height: 1.5em;
 }
 .pns_eventDate {
     font-size: 12pt;
     padding: 2px;
-    font-family: 'sweet sans pro', Arial, Helvetica, sans-serif;
     color: #414042;
-    letter-spacing: normal;
+    font-family: sweet-sans-pro, Arial, sans-serif;
     text-transform: none;
-    line-height: 1.5em;
+    line-height: 1.5;
 }
 .pns_eventDateSpacing {
-    padding: 0 8px;
+/*    padding: 0 8px; */
+     padding: 0 6px;
 }
 .pns_eventCampus {
-    display:none;
+    display:none !important;
     font-size: 11pt;
     padding: 2px;
-    text-transform: uppercase;
+    color: #414042;
+    text-transform: none;
 }
 .pns_eventFinderLinkDiv {
     margin: 20px;
     text-align: center;
 }
 .pns_eventFinderLink {
+    font-size: 14pt;
     color: #60BBE9;
     font-family: 'sweet-sans-pro', 'sweet sans pro', Arial, Helvetica, sans-serif;
-    font-size: 14pt;
     text-decoration: none;
 }
 .pns_eventFinderLink:hover {
@@ -89,22 +100,29 @@
 }
 img {
     margin-bottom: 0 !important;
+    border: 2px solid #60BBE9;
 }
 .pns_showMoreDiv {
     margin: 0;
     text-align: center;
 }
 .pns_showMoreBtn {
-    background-color: #f0f0f0;
-    border: 1px solid #909090;
-    border-radius: 5px;
-    color: #606060;
-    padding: 10px;
+    background-color: #60BBE9;
+    border: 1px solid #A7DAF3;
+    border-radius: 0px;
+    color: #262626;
+    padding: 16px 30px;
     font-family: 'sweet-sans-pro', 'sweet sans pro', Arial, Helvetica, sans-serif;
 
 }
 .pns_showMoreBtn:hover {
-    background-color: #f4f4f4;
-    color: #404040;
+    background-color: #A7DAF3;
+    color: #262626;
+}
+
+.pns_spinnerImage {
+    height: auto;
+    margin: 0 0 3px 8px;
+    width: 20px;
 }
 /*# sourceMappingURL=main.59aeeca2.css.map*/
