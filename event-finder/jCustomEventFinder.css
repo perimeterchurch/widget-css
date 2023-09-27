@@ -28,9 +28,9 @@
 }
 .pns_eventImage {
     display: block !important;
-   /* width: 100%; */
+  width: 100%;
 /*  debbie's mods below */  
-    width: 340px; 
+ /*     width: 340px;  */
     height: 190px; 
     object-fit: cover; 
     object-position: 100% 0;
