@@ -6,7 +6,18 @@
 #detailsContainer {
 	font-size: 0px;
 }
-
+/* Adjust labeling text size, color and padding */
+.mppw-form-field__alt-label {
+    display: block;
+    margin-bottom: 1.5em;
+    font-size: 16px;
+    padding: 15px;
+}
+.mppw-form-field__control {
+    font-size: 16px;
+    color: #262626;
+    padding: 15px;
+}
 
 @media only screen and (max-width: 415px) {
 .mpp-innerpage--map-info {
