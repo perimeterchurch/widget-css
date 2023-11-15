@@ -11,7 +11,9 @@
 
 .mppw-form-field__label, .mppw-form-field__alt-label-content {
 	font-family: 'sweet-sans-pro','Sweet Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-	font-weight: bold;
+	font-weight: normal;
+	color: #262626;
+	margin: 10px;
 }
 
 .mppw-form-field__control.mppw-form-field_alt-control, .mppw-form-field-alt.mpp-mt-10   {
