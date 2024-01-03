@@ -15,6 +15,7 @@
 	font-weight: bold !important;
 	color: #09243F !important;
 	margin: 10px 10px 10px 10px;
+	font-size: 15px !important;
 }
 
 .mppw-form-field__control.mppw-form-field_alt-control, .mppw-form-field-alt.mpp-mt-10   {
@@ -64,9 +65,4 @@
 }
 #registrationTotalContainer {
     display: none;
-}
-
-.mppw-form-field__label {
-	font-family: 'sweet-sans-pro','Sweet Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: bold;
 }
