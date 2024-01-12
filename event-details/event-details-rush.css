@@ -7,9 +7,13 @@
 	background-color: #c81f4b;
 	color: #fffff;
 	font-family: Muli, sans-serif;
+	font-weight: 800 !important;
 	padding: 7px 25px;
-	font-size: 16px;
+	font-size: 20px;
 	text-transform: uppercase;
+	border-radius: 0px;
+	drop-shadow: none;
+	letter-spacing: 5px !important;
 }
 
 
