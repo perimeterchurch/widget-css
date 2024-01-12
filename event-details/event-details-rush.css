@@ -1,6 +1,17 @@
 #registrationTotalContainer h3 {
-	font-size: 36px;
+	font-size: 30px;
 }
+
+
+#registerAndCheckoutButton {
+	background-color: #c81f4b;
+	color: #fffff;
+	font-family: Muli, sans-serif;
+	padding: 7px 25px;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
 
 
 .mppw-ics-link, #detailsContainer > strong {
