@@ -1,3 +1,8 @@
+#registrationTotalContainer h3 {
+	font-size: 36px;
+}
+
+
 .mppw-ics-link, #detailsContainer > strong {
 	display: none !important;
 }
