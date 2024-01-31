@@ -1,15 +1,11 @@
-<div class="wpb-wrapper">
-     <div class="team-member" data-style="meta_overlaid">
-    {% for element in DataSet1 %}
-   
-        <div class="team-member-overlay"></div>
-      <div class="team-member-image" style="background-image: url({{element.Photo_URL}});">
-          </div>
-        <div class="team-meta">
-          <h3>{{element.Name}}</h3>
-          <p>{{element.Job_Title}}</p>
-          </ div>
- 
+<div class="card-container">
+ {% for element in DataSet1 %}
+  <div class="card">
+    <img src="{{element.Photo_URL}}" alt="Person" style="width:100%">
+    <div class="card-info">
+      <h3 class="card-title">{{element.Name}}</h3>
+      <p class="card-subtitle">{{element.Job_Title}}</p>
+    </div>
+  </div>
     {% endfor %}
-            </div>
 </div>
