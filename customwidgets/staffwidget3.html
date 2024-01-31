@@ -1,12 +1,12 @@
-<div class="card-container">
+<div class="wpb-wrapper">
     {% for element in DataSet1 %}
-    <div class="card">
-
-      <img id="staffphoto" src="{{element.Photo_URL}}" />
-
+    <div class="team-member" data-style="meta_overlaid">
+        <div class="team-member-overlay"></div>
+      <div class="team-member-image" src="{{element.Photo_URL}}" ></div>
+        <div class="team-meta">
       <h3>{{element.Name}}</h3>
       <p>{{element.Job_Title}}</p>
-                
+    </div>
     </div>
     {% endfor %}
 </div>
