@@ -1,3 +1,35 @@
+<div class="row">
+  <div class="offset-md-3 col-md-6">
+    <div>
+      <div>
+        <label>Department</label>
+      </div>
+      <select id="ddlDepartment" class="form-select group-select">
+        <option value="">All Departments</option>
+        {% for element in DataSet2 %}
+          <option value="{{element.Department_ID}}">{{element.Department_Name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div>
+      <div>
+        <label>Search</label>
+      </div>
+      <div class="row">
+        <div class="col-10">
+          <input type="search" id="txtKeyword" class="form-control" placeholder="Keyword Search">      
+        </div>
+        <div class="col-2">
+          <button type="button" id="btnKeyword" class="btn btn-outline-success">Search</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
 <div class="card-container">
  {% for element in DataSet1 %}
   <div class="card">
