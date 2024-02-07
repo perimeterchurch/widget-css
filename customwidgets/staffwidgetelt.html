@@ -1,0 +1,13 @@
+<div class="card-container">
+ {% for element in DataSet1 %}
+  <div class="card">
+   <div class="dark-overlay"></div>
+    <img src="{{element.Photo_URL}}" alt="Person" style="width:100%">
+    <div class="card-info">
+      <h3 class="card-title">{{element.Name}}</h3>
+      <p class="card-subtitle">{{element.Job_Title}}</p>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+
