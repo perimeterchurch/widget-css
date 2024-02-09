@@ -2,7 +2,11 @@
  {% for element in DataSet1 %}
   <div class="card">
    <div class="dark-overlay"></div>
+     {% if element.Photo_URL %}
     <img src="{{element.Photo_URL}}" alt="Person" style="width:100%">
+    {% else %}
+    <img src="https://github.com/perimeterchurch/widget-css/blob/4c642eef2d07fbf19a100b81720f7e2cb674b5fd/customwidgets/defaultprof.png" alt="Person" style="width:100%">    
+    {% endif %}
     <div class="card-info">
       <h3 class="card-title">{{element.Name}}</h3>
       <p class="card-subtitle">{{element.Job_Title}}</p>
