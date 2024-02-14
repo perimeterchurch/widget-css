@@ -32,6 +32,7 @@
 
 <div class="card-container">
  {% for element in DataSet1 %}
+  <a href="https://devperimeterorg.kinsta.cloud/demo-staff-email-widget-from-it/?eid={{element.Employee_ID}}">
   <div class="card">
    <div class="dark-overlay"></div>
     {% if element.Photo_URL %}
@@ -44,5 +45,6 @@
       <p class="card-subtitle">{{element.Job_Title}}</p>
     </div>
   </div>
+  </a>
     {% endfor %}
 </div>
