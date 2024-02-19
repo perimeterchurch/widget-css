@@ -1,0 +1,9 @@
+<div class="finder-container">
+    {% for trip in DataSet1 %}
+    <div class="finder-card">
+        <h2 class="trip-name">{{trip.Campaign_Name}}</h2>
+        <h4 class="trip-date">{{trip.Start_Date}}-{{trip.End_Date}}</h4>
+        <p class="trip-description">{{trip.Description}}</p>
+    </div>
+    {% endfor %}
+</div>
