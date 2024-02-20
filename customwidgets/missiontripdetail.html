@@ -1,17 +1,17 @@
 <div class="details-wrapper">
     {% for elements in DataSet1 %}
     <div class="header-wrapper">
-        <img class="trip-hero" src="{{element.Link}}" > 
+        <img class="trip-hero" src="{{elements.Link}}" > 
         <div class="overlay">
-            <h2 class="trip-name">{{element.Campaign_Name}}</h2>
-            <h3 class="trip-dates">{{element.Start_Date}} - {{element.End_Date}}</h3>
+            <h2 class="trip-name">{{elements.Campaign_Name}}</h2>
+            <h3 class="trip-dates">{{elements.Start_Date}} - {{elements.End_Date}}</h3>
         </div>
     </div>
     <div class="description-wrapper">
-        <p class="long-description">{{element.Long_Description}}</p>
+        <p class="long-description">{{elements.Long_Description}}</p>
         <div class="button-container">
-            <button class="register-join" href="{{element.link}}">Register to Join</button>
-            <button class="support-journey" href="{{element.supportlink}}">Support Journey</button>
+            <button class="register-join" href="{{elements.link}}">Register to Join</button>
+            <button class="support-journey" href="{{elements.supportlink}}">Support Journey</button>
         </div>
     </div>
     <div class="disclaimer-wrapper">
