@@ -1,0 +1,22 @@
+<div class="details-wrapper">
+    {% for elements in DataSet1 %}
+    <div class="header-wrapper">
+        <img class="trip-hero" src="{{element.Link}}" > 
+        <div class="overlay">
+            <h2 class="trip-name">{{element.Campaign_Name}}</h2>
+            <h3 class="trip-dates">{{element.Start_Date}} - {{element.End_Date}}</h3>
+        </div>
+    </div>
+    <div class="description-wrapper">
+        <p class="long-description">{{element.Long_Description}}</p>
+        <div class="button-container">
+            <button class="register-join" href="{{element.link}}">Register to Join</button>
+            <button class="support-journey" href="{{element.supportlink}}">Support Journey</button>
+        </div>
+    </div>
+    <div class="disclaimer-wrapper">
+        <h3>DONATION DISCLAIMER</h3>
+        <p class="disclaimer">Donations are tax-deductible and must be made payable to Perimeter Church, who is training and sending the team and who requests that this be above your regular tithe and offerings to your local church. If I raise more than 100%, the additional funds will be allocated to the team fund, and, after that, used at the discretion of the Global Outreach Ministry Team.</p>
+    </div>
+{% endfor $}
+</div>
