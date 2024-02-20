@@ -13,6 +13,23 @@
             <button class="register-join" href="{{elements.link}}">Register to Join</button>
             <button class="support-journey" href="{{elements.supportlink}}">Support Journey</button>
         </div>
+        <div class="trip-participants">
+            <div class="card-container">
+ {% for elements in DataSet2 %}
+  <a href="insert link">
+  <div class="card">
+   <div class="dark-overlay"></div>
+    {% if element.Photo_URL %}
+    <img src="{{element.Photo_URL}}" alt="Person" style="width:100%">
+    {% else %}
+    <img src="https://cdn.jsdelivr.net/gh/perimeterchurch/widget-css@07451adc9a3cef9eed03741f87d8e315392a395a/customwidgets/defaultprof.png" alt="Person" style="width:100%">    
+    {% endif %}
+    <div class="card-info">
+      <p class="card-title">{{element.Full_Name}}</p>
+    </div>
+  </div>
+  </a>
+</div>
     </div>
     <div class="disclaimer-wrapper">
         <h3>DONATION DISCLAIMER</h3>
