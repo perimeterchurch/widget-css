@@ -16,19 +16,19 @@
     </div>
             {% endfor %}
     </div>
+{% for elements in DataSet1 %}
 <div class="map-wrapper">
         <iframe
   width="450"
   height="250"
   frameborder="0" style="border:0"
   referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAZHoGlr-YDI0UuYRbskORnwboM5EvdH1s&q=guatemala&zoom=7"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAZHoGlr-YDI0UuYRbskORnwboM5EvdH1s&q={{elements.Destination_Name}}&zoom=7"
   >
 </iframe>
-        
+       {% endfor %} 
 </div>
 
-<div class="bgColorWrapper">
 <div class="details-wrapper">
     <div class="column"></div>
     <div class="column">
@@ -54,8 +54,8 @@
     </div>
     <div class="column"></div>
 </div>
-</div>
 
+<div class="bgColorWrapper">
     <div class="details-wrapper">
     <div class="column"></div>
     <div class="column">
@@ -66,4 +66,4 @@
 </div>
             <div class="column"></div>
     </div>
-   
+</div>
