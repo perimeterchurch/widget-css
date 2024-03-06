@@ -2,7 +2,8 @@
     {% for trip in DataSet1 %}
     <div class="finder-card">
       <a href="https://www.perimeter.org/pages/outreach-volunteer/global-outreach/global-outreach/pages/mission-trip-details/?id={{trip.Pledge_Campaign_ID}}" > <h2 class="trip-name">{{trip.Nickname}}</h2> </a>
-        <h4 class="trip-date">{{trip.Start_Date}} - {{trip.End_Date}}</h4>
+      <h3 class="trip-destination">{{trip.Destination_Name}}</h3>  
+      <h4 class="trip-date">{{trip.Start_Date}} - {{trip.End_Date}}</h4>
         <p class="trip-description">{{trip.Description}}</p>
     </div>
         <div class="line-break-wrapper">
