@@ -33,16 +33,16 @@
 
       </div>
 
-      <div class="col-4">
-          <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#donors{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">Show Donors</button>
-          {% if tripLeader.Pledge_Campaign_ID == element.Pledge_Campaign_ID %}
-          {% if element.MyTrip == 1 %}
-            <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#leader{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">Trip Leader</button>
-          {% endif %}          
-          {% endif %}          
-      </div>
     </div>
-
+    <div class="col-4">
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#donors{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">Show Donors</button>
+      {% if tripLeader.Pledge_Campaign_ID == element.Pledge_Campaign_ID %}
+      {% if element.MyTrip == 1 %}
+        <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#leader{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">Trip Leader</button>
+      {% endif %}          
+      {% endif %}
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#donors{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">View My Letter</button>          
+  </div>
 
     {% assign donors = DataSet2 | where: 'Pledge_ID', element.Pledge_ID %}
 
