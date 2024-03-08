@@ -32,9 +32,8 @@
         My Funds Raised: <strong>{{element.Total_Donations | decimals: 2, "en-US" | prepend: "$" }}</strong> of {{element.Total_Pledge | decimals: 2, "en-US" | prepend: "$" }}
 
       </div>
-
     </div>
-  
+    
     <div class="row mt-3">
     <div class="col-4 buttonsrow">
       <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#donors{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">Show Donors</button>
@@ -43,7 +42,7 @@
         <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#leader{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">Trip Leader</button>
       {% endif %}          
       {% endif %}
-      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#pledge{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">View My Letter</button>          
+      <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#pledges{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">View My Letter</button>          
   </div>
   </div>
 
@@ -127,15 +126,17 @@
       </div>
     </div>
 
-    {% assign pledge = DataSet5 | where: 'Pledge_ID', element.Pledge_ID %}
+    {% assign pledges = DataSet5 | where: 'Pledge_ID', element.Pledge_ID %}
 
-    <div class="collapse mt-3" id="pledge{{element.Pledge_ID}}">
+    <div class="collapse mt-3" id="pledges{{element.Pledge_ID}}">
       <div class="card card-body">
         <h4>My Letter</h4>
+        {% for pledge in pledges %}
         <p class="myletter">{{pledge.Letter}}</p>
         {% endfor %}
       </div>
     </div>
+
 
   </div>
 </div>
