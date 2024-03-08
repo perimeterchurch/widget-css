@@ -34,6 +34,7 @@
       </div>
 
     </div>
+    <div class="row mt-3">
     <div class="col-4">
       <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#donors{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">Show Donors</button>
       {% if tripLeader.Pledge_Campaign_ID == element.Pledge_Campaign_ID %}
@@ -42,6 +43,7 @@
       {% endif %}          
       {% endif %}
       <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#donors{{element.Pledge_ID}}" aria-expanded="false" aria-controls="">View My Letter</button>          
+  </div>
   </div>
 
     {% assign donors = DataSet2 | where: 'Pledge_ID', element.Pledge_ID %}
