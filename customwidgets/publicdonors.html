@@ -1,0 +1,11 @@
+<div class="donorcontainer">
+    <h3 class="donortitle">Supporters</h3>
+        <div class="donorlist">
+            {% for elements in DataSet3 %}
+            <div class="donors">
+                <p class="donorname">{{element.Full_Name}}</p>
+                <p class="donordate">{{element.Donation_Date}}</p>
+            </div>
+            {% endfor %}
+        </div>
+</div>
