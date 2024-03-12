@@ -1,0 +1,100 @@
+<div class="header-wrapper">
+  {% for elements in DataSet1 %}
+  <img class="trip-hero" src="{{elements.Link}}">
+  <div class="overlay">
+    <div class="participant-info">
+      <div class="avatar">
+        {% if elements.Photo_URL %}
+        <img class="profile-avatar" src="{{elements.Photo_URL}}" alt="My Photo">
+        {% else %}
+        <img class="profile-avatar"
+          src="https://cdn.jsdelivr.net/gh/perimeterchurch/widget-css@07451adc9a3cef9eed03741f87d8e315392a395a/customwidgets/defaultprof.png"
+          alt="Default Photo">
+        {% endif %}
+      </div>
+      <div class="participant-name">
+        <h1 class="pledge-name">{{elements.Full_Name}}</h1>
+      </div>
+    </div>
+    <h2 class="trip-name">{{elements.Nickname}}</h2>
+    <h3 class="trip-destination">{{elements.Destination_Name}}</h3>
+    <h3 class="trip-dates">{{elements.Start_Date}} - {{elements.End_Date}}</h3>
+    {% endfor %}
+    <div class="fund-raising-info">
+      <div class="progress-bar-background">
+        {% for elements in DataSet2 %}
+        <div class="progress-bar-foreground" style="width: {% if elements.Funds_Raised_Percentage %}{{elements.Funds_Raised_Percentage}}{% else %}{% endif %}"></div>
+      </div>
+      <span class="fund-raising-percentage">{% if elements.Funds_Raised_Percentage %}{{elements.Funds_Raised_Percentage}} Funds Raised{% else %}0% Funds Raised{% endif %}</span>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% for elements in DataSet1 %}
+{% if elements.Facebook_Link or elements.X_Link or elements.Instagram_Link %}
+<div class="stay-updated">
+  <h2>Stay Updated</h2>
+  <div class="social-links">
+    {% if elements.Facebook_Link %}
+    <a href="{{elements.Facebook_Link}}" class="social-link facebook" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    {% endif %}
+    
+    {% if elements.X_Link %}
+    <a href="{{elements.X_Link}}" class="social-link x" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-twitter"></i>
+    </a>
+    {% endif %}
+    
+    {% if elements.Instagram_Link %}
+    <a href="{{elements.Instagram_Link}}" class="social-link instagram" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-instagram"></i>
+    </a>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+{% endfor %}
+
+
+{% for elements in DataSet1 %}
+<div class="button-container">
+  <a class="support-journey" href="https://perimeter.onlinegiving.org/donate/form/1385?mp_campaign_id={{elements.Pledge_Campaign_ID}}&mp_pledge_id={{elements.Pledge_ID}}#!/">Support {{elements.First_Name}}</a>
+  <a class="learn-more" href="https://www.perimeter.org/pages/outreach-volunteer/global-outreach/global-outreach/pages/mission-trip-details/?id={{elements.Pledge_Campaign_ID}}">Learn More</a>
+</div>
+
+<div class="story-content">
+  {% if elements.Letter %}
+  <p class="personal-story">{{elements.Letter}}</p>
+  {% else %}
+  <p class="personal-story">My letter is coming soon!</p>
+  {% endif %}
+  {% endfor %}
+</div>
+
+
+<div class="bgColorWrapper">
+  <div class="details-wrapper">
+    <div class="disclaimer-wrapper">
+      <h3>DONATION DISCLAIMER</h3>
+      <p class="disclaimer">Donations are tax-deductible and must be made payable to Perimeter Church, who is training
+        and sending the team and who requests that this be above your regular tithe and offerings to your local
+        church. If I raise more than 100%, the additional funds will be allocated to the team fund, and, after that,
+        used at the discretion of the Global Outreach Ministry Team.</p>
+    </div>
+  </div>
+</div>
+
+<div class="donorcontainer">
+  <h3 class="donortitle">Supporters</h3>
+      <div class="donorlist">
+          {% for elements in DataSet3 %}
+          <div class="donors">
+              <p class="donorname">{{elements.Full_Name}}</p>
+              <p class="donordate">{{elements.Donation_Date}}</p>
+          </div>
+          {% endfor %}
+      </div>
+</div>
