@@ -79,14 +79,15 @@
   <div class="donorwrapper">
   <h3 class="donortitle">Supporters</h3>
       <div class="donorlist">
-        <div class="donoriconwrapper">
-          <img src="https://cdn.jsdelivr.net/gh/perimeterchurch/widget-css@97bc67d6d7a45c3c68cff8d2e56c984af38d3ae7/images/Donate%20Icon.png">
-        </div>
           {% for elements in DataSet3 %}
           <div class="donors">
+            <div class="donoriconwrapper">
+          <img src="https://cdn.jsdelivr.net/gh/perimeterchurch/widget-css@97bc67d6d7a45c3c68cff8d2e56c984af38d3ae7/images/Donate%20Icon.png">
+        </div>
+            <div class="donormeta">
               <p class="donorname">{{elements.Full_Name}}</p>
               <p class="donordate">{{elements.Donation_Date}}</p>
-              <hr class="donorline">
+            </div>
           </div>
           {% endfor %}
       </div>
