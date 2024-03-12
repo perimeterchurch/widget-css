@@ -26,8 +26,12 @@
         <div class="progress-bar-foreground" style="width: {% if elements.Funds_Raised_Percentage %}{{elements.Funds_Raised_Percentage}}{% else %}{% endif %}"></div>
       </div>
       <span class="fund-raising-percentage">{% if elements.Funds_Raised_Percentage %}{{elements.Funds_Raised_Percentage}} Funds Raised{% else %}0% Funds Raised{% endif %}</span>
-      {% endfor %}
     </div>
+    <div class="button-container">
+  <a class="support-journey" href="https://perimeter.onlinegiving.org/donate/form/1385?mp_campaign_id={{elements.Pledge_Campaign_ID}}&mp_pledge_id={{elements.Pledge_ID}}#!/">Support {{elements.First_Name}}</a>
+  <a class="learn-more" href="https://www.perimeter.org/pages/outreach-volunteer/global-outreach/global-outreach/pages/mission-trip-details/?id={{elements.Pledge_Campaign_ID}}">Learn More</a>
+</div>
+  {% endfor %}
   </div>
 </div>
 
@@ -60,11 +64,6 @@
 
 
 {% for elements in DataSet1 %}
-<div class="button-container">
-  <a class="support-journey" href="https://perimeter.onlinegiving.org/donate/form/1385?mp_campaign_id={{elements.Pledge_Campaign_ID}}&mp_pledge_id={{elements.Pledge_ID}}#!/">Support {{elements.First_Name}}</a>
-  <a class="learn-more" href="https://www.perimeter.org/pages/outreach-volunteer/global-outreach/global-outreach/pages/mission-trip-details/?id={{elements.Pledge_Campaign_ID}}">Learn More</a>
-</div>
-
 <div class="story-content">
   {% if elements.Letter %}
   <p class="personal-story">{{elements.Letter}}</p>
