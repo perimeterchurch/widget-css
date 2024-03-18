@@ -132,12 +132,16 @@
       <div class="card card-body">
         <h4>My Letter</h4>
         {% for pledge in pledges %}
-        <a class="editletter" href="https://www.perimeter.org/my/perimeter/member/gojourneys/7941/{{element.Pledge_ID}}/">Edit My Letter</a>
-        <p class="myletter">{{pledge.Letter}}</p>
+        <div class="letter-container">
+          <div class="letter-text">{{pledge.Letter}}</div>
+          <div class="quill-container" style="display: none;">
+            <div class="quill-editor"></div>
+          </div>
+          <button class="edit-save-btn btn btn-sm btn-outline-primary" data-pledgeid="{{pledge.Pledge_ID}}">Edit</button>
+        </div>
         {% endfor %}
       </div>
     </div>
-
 
   </div>
 </div>
