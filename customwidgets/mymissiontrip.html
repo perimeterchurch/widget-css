@@ -128,20 +128,25 @@
 
     {% assign pledges = DataSet5 | where: 'Pledge_ID', element.Pledge_ID %}
 
-    <div class="collapse mt-3" id="pledges{{element.Pledge_ID}}">
+   <div class="collapse mt-3" id="pledges{{element.Pledge_ID}}">
       <div class="card card-body">
         <h4>My Letter</h4>
         {% for pledge in pledges %}
         <div class="letter-container">
           <div class="letter-text">{{pledge.Letter}}</div>
-          <div class="quill-container" >
+          <div class="quill-container">
             <div class="quill-editor"></div>
           </div>
-          <button class="edit-save-btn btn btn-sm btn-outline-primary" data-pledgeid="{{pledge.Pledge_ID}}">Edit</button>
+          <div class="button-container">
+            <button class="edit-btn" data-pledgeid="{{pledge.Pledge_ID}}">Edit</button>
+            <button class="save-btn" style="display: none;">Save</button>
+            <button class="cancel-btn" style="display: none;">Cancel</button>
+          </div>
         </div>
         {% endfor %}
       </div>
     </div>
+
 
   </div>
 </div>
