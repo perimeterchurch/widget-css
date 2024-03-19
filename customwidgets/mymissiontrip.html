@@ -40,7 +40,7 @@
         {% if tripLeader.Pledge_Campaign_ID == element.Pledge_Campaign_ID %}
           {% if element.MyTrip == 1 %}
             <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#leader{{element.Pledge_ID}}" aria-expanded="false" aria-controls="leader{{element.Pledge_ID}}">
-              <img src="/MyMissionTrips/Assets/chevron.svg" class="chevron"> Trip Leader 
+              <img src="https://cdn.jsdelivr.net/gh/perimeterchurch/widget-css@0564a628e54eca3ec0dc09c336fde6d0af19a6a1/images/chevron.svg" class="chevron"> Trip Leader 
             </button>
           {% endif %}          
         {% endif %}
@@ -104,7 +104,7 @@
     <div class="row mt-3">
       <div class="col-4 buttonsrow">
         <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#donors{{element.Pledge_ID}}" aria-expanded="false" aria-controls="donors{{element.Pledge_ID}}">
-          <img src="/MyMissionTrips/Assets/chevron.svg" class="chevron"> Show Donors
+          <img src="https://cdn.jsdelivr.net/gh/perimeterchurch/widget-css@0564a628e54eca3ec0dc09c336fde6d0af19a6a1/images/chevron.svg" class="chevron"> Show Donors
         </button>
       </div>
       {% assign donors = DataSet2 | where: 'Pledge_ID', element.Pledge_ID %}
@@ -131,7 +131,7 @@
       <div class="row mt-3">
       <div class="col-4 buttonsrow">
         <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#pledges{{element.Pledge_ID}}" aria-expanded="false" aria-controls="pledges{{element.Pledge_ID}}">
-          <img src="/MyMissionTrips/Assets/chevron.svg" class="chevron"> View My Letter 
+          <img src="https://cdn.jsdelivr.net/gh/perimeterchurch/widget-css@0564a628e54eca3ec0dc09c336fde6d0af19a6a1/images/chevron.svg" class="chevron"> View My Letter 
         </button>  
         </div>   
     {% assign pledges = DataSet5 | where: 'Pledge_ID', element.Pledge_ID %}
