@@ -40,7 +40,7 @@
         {% if tripLeader.Pledge_Campaign_ID == element.Pledge_Campaign_ID %}
           {% if element.MyTrip == 1 %}
             <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#leader{{element.Pledge_ID}}" aria-expanded="false" aria-controls="leader{{element.Pledge_ID}}">
-              <img src="/MyMissionTrips/Assets/chevron.svg" class="chevron"> Trip Leader 
+              <svg class="w-4 h-4 chevron" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.51611 0.666016L10.3638 9.5134L1.51611 18.3608" stroke="currentColor" stroke-width="1.61039"></path></svg> Trip Leader 
             </button>
           {% endif %}          
         {% endif %}
@@ -139,7 +139,7 @@
       <div class="row mt-3">
       <div class="col-4 buttonsrow">
         <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#pledges{{element.Pledge_ID}}" aria-expanded="false" aria-controls="pledges{{element.Pledge_ID}}">
-          <img src="/MyMissionTrips/Assets/chevron.svg" class="chevron"> View My Letter 
+          <svg class="w-4 h-4 chevron" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.51611 0.666016L10.3638 9.5134L1.51611 18.3608" stroke="currentColor" stroke-width="1.61039"></path></svg> View My Letter 
         </button>  
         </div>   
     {% assign pledges = DataSet5 | where: 'Pledge_ID', element.Pledge_ID %}
