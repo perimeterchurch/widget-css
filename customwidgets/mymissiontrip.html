@@ -118,6 +118,8 @@
             <td>{{donor.Donation_Date | date: "%m/%d/%Y"}}</td>
             <td>{{donor.Nickname}} {{donor.Last_Name}} </td>
             <td>{{donor.Address_Line_1}}<br>{{donor.City}}, {{donor.State}} {{donor.Postal_Code}}</td>
+            <td>{{donor.Email_Address}}</td>
+            <td>{{donor.Mobile_Phone}}</td>
           </tr>
           {% endfor %}
         </table>
