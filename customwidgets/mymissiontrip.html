@@ -34,7 +34,24 @@
 
       </div>
     </div>
+
+
+    <div class="team-lead-header-wrapper">
+      <h4 class="team-lead-header">Team Leaders</h3>
+    </div>
+
     
+    {% assign tripLeaderInfo = DataSet8 | where: 'Pledge_Campaign_ID', element.Pledge_Campaign_ID %}
+    {% for element in tripLeaderInfo %}
+    <div class="lead-email-wrapper">
+      <div class="lead-info">
+        <img src="{{element.Photo_URL}}" class="lead-picture">
+        <a href="perimeter.org" class="lead-email">{{element.Full_Name}}</a>
+      </div>
+    </div>
+    {% endfor %}
+ 
+      
 
     <div class="row mt-3">
       <div class="col-4 buttonsrow">
