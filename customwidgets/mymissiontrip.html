@@ -176,23 +176,7 @@
         <h4>My Letter</h4>
         {% for pledge in pledges %}
         <div class="letter-container">
-         {% if pledge.Letter %}
           <div class="letter-text">{{pledge.Letter}}</div>
-          {% else %}
-          <div class="letter-text">Dear friends and family,<br><br>
-I am excited to share that I have been given the opportunity to go on a mission trip to serve others and share the love of Christ. I feel called by God to use my gifts and talents to make a positive impact in the lives of those we will be serving.<br><br>
-
-During this mission, our team will be engaging in various activities to support and care for the local community. We are dedicated to bringing hope, healing, and the message of salvation to those we meet.<br><br>
-
-To embark on this life-changing journey, I am humbly asking for your spiritual and financial support. Please pray for our team, the people we will serve, and for God's will to be done throughout this mission. If you feel led to contribute financially, any amount, no matter how small, will be greatly appreciated. Your generosity will help cover the costs associated with this trip, enabling me to focus on serving others and sharing God's love.<br><br>
-
-If you would like to support me financially, you can do so by clicking the "Support Me" button above. Should we raise more than 100% of the necessary funds, the remaining amount will be allocated to other teammates who have not yet reached their goal.<br><br>
-
-I am truly grateful for your support and partnership in this mission. Together, we can make a lasting impact and show God's love to those we serve.<br><br>
-
-With heartfelt thanks,<br>
-[Your Name]</div>
-          {% endif %}
           <div class="button-container">
             <button class="edit-btn" data-pledgeid="{{pledge.Pledge_ID}}">Edit My Letter</button>
             <button class="save-btn" style="display: none;">Save Changes</button>
