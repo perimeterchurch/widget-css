@@ -59,7 +59,7 @@
           {% if element.MyTrip == 1 %}
         
             <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#leader{{element.Pledge_ID}}" aria-expanded="false" aria-controls="leader{{element.Pledge_ID}}">
-              <svg class="w-4 h-4 chevron" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.51611 0.666016L10.3638 9.5134L1.51611 18.3608" stroke="currentColor" stroke-width="1.61039"></path></svg> Trip Leader 
+              <svg class="w-4 h-4 chevron" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.51611 0.666016L10.3638 9.5134L1.51611 18.3608" stroke="currentColor" stroke-width="1.61039"></path></svg> Trip Leader Resources 
             </button>
           {% endif %}          
         {% endif %}
@@ -80,7 +80,6 @@
     
         <div class="collapse mt-3" id="leader{{element.Pledge_ID}}">
           <div class="card card-body">
-            <h4>Mission Trip Leader</h4>
             {% assign leaderEmail = DataSet6 | where: 'Pledge_Campaign_ID', element.Pledge_Campaign_ID %}
             {% for elements in leaderEmail %}
             <div>
@@ -189,7 +188,7 @@
             
             <br>
             
-            For the mission, my total cost is $_________, and we are individually responsible for raising our support. If you would like to join me in this opportunity to bless and be blessed, enclosed is a response card. To donate online, visit www.perimeter.org/global.  Just choose this journey and my name from the drop-down boxes.  Donations are tax-deductible and must be made payable to Perimeter Church, who is training and sending the team and who requests that this be above your regular tithe and offerings to your local church.  If I raise more than 100%, the additional funds will be allocated to the team fund, and, after that, used at the discretion of the Global Outreach Ministry Team.</div>
+            For the mission, my total cost is $_________, and we are individually responsible for raising our support. If you would like to join me in this opportunity to bless and be blessed, click the button above. Donations are tax-deductible and must be made payable to Perimeter Church, who is training and sending the team and who requests that this be above your regular tithe and offerings to your local church.  If I raise more than 100%, the additional funds will be allocated to the team fund, and, after that, used at the discretion of the Global Outreach Ministry Team.</div>
           {% endif %}
           <div class="button-container">
             <button class="edit-btn" data-pledgeid="{{pledge.Pledge_ID}}">Edit My Letter</button>
