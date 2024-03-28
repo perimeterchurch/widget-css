@@ -177,10 +177,20 @@
         <h4>My Letter</h4>
         {% for pledge in pledges %}
         <div class="letter-container">
+         {% if pledge.Letter %}
           <div class="letter-text">{{pledge.Letter}}</div>
-          <div class="quill-container">
-            <div class="quill-editor"></div>
-          </div>
+          {% else %}
+          <div class="letter-text">Dear [Name]<br>
+            [Where I'm going.  Exact dates. Why I'm going.]<br>
+            
+            [What the team will be doing, the needs of the people you will be serving]<br>
+            
+            [Explain the reader's role as a prayer and/or financial supporter.]<br>
+            
+            <br>
+            
+            For the mission, my total cost is $_________, and we are individually responsible for raising our support. If you would like to join me in this opportunity to bless and be blessed, enclosed is a response card. To donate online, visit www.perimeter.org/global.  Just choose this journey and my name from the drop-down boxes.  Donations are tax-deductible and must be made payable to Perimeter Church, who is training and sending the team and who requests that this be above your regular tithe and offerings to your local church.  If I raise more than 100%, the additional funds will be allocated to the team fund, and, after that, used at the discretion of the Global Outreach Ministry Team.</div>
+          {% endif %}
           <div class="button-container">
             <button class="edit-btn" data-pledgeid="{{pledge.Pledge_ID}}">Edit My Letter</button>
             <button class="save-btn" style="display: none;">Save Changes</button>
