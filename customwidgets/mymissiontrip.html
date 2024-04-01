@@ -37,7 +37,7 @@
     
 
     <div class="team-lead-header-wrapper">
-      <h4 class="team-lead-header">Team Leaders</h3>
+      <h4 class="team-lead-header">Trip Leaders</h3>
     </div>
 
     
@@ -46,7 +46,7 @@
     <div class="lead-email-wrapper">
       <div class="lead-info">
         <img src="{{element.Photo_URL}}" class="lead-picture">
-        <a href="perimeter.org" class="lead-email">{{element.Full_Name}}</a>
+        <a href="mailto:{{element.Leader_Email}}" class="lead-email">{{element.Full_Name}}</a>
       </div>
     </div>
     {% endfor %}
@@ -79,7 +79,6 @@
     
         <div class="collapse mt-3" id="leader{{element.Pledge_ID}}">
           <div class="card card-body">
-            <h4>Mission Trip Leader</h4>
             {% assign leaderEmail = DataSet6 | where: 'Pledge_Campaign_ID', element.Pledge_Campaign_ID %}
             {% for elements in leaderEmail %}
             <div>
@@ -185,7 +184,7 @@
             
             <br>
             
-            For the mission, my total cost is $_________, and we are individually responsible for raising our support. If you would like to join me in this opportunity to bless and be blessed, enclosed is a response card. To donate online, visit www.perimeter.org/global.  Just choose this journey and my name from the drop-down boxes.  Donations are tax-deductible and must be made payable to Perimeter Church, who is training and sending the team and who requests that this be above your regular tithe and offerings to your local church.  If I raise more than 100%, the additional funds will be allocated to the team fund, and, after that, used at the discretion of the Global Outreach Ministry Team.</div>
+            For the mission, my total cost is $_________, and we are individually responsible for raising our support. If you would like to join me in this opportunity to bless and be blessed, click the button above to donate. If I raise more than 100%, the additional funds will be allocated to the team fund, and, after that, used at the discretion of the Global Outreach Ministry Team.</div>
           {% endif %}
           <div class="quill-container">
             <div class="quill-editor"></div>
