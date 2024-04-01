@@ -1,0 +1,52 @@
+<div class="previous-mission-trips">
+  <h2 class="previous-title">Previous Mission Trips</h2>
+  {% for trip in DataSet7 %}
+  <div class="row mb-4 mt-3">
+    <div class="col-10">        
+         <h3 class="previous-name">
+          {% if trip.Trip_Nickname %}
+          {{trip.Trip_Nickname}}
+          {% else %}
+          {{trip.Destination_Name}} - {{trip.Trip_Start_Date | date: "%B %d, %Y"}}
+          {% endif %}
+         </h3>
+        <div class="card card-body previous-card">
+          {% if trip.Long_Description %}
+          <p>
+            {{trip.Long_Description}}<br>
+          </p>
+          {% else %}
+          <p style="display:none">
+          </p>
+          {% endif %}
+          <div class="row mt-3">
+            <div class="col-4 buttonsrow">
+              <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#pastDonors{{trip.Pledge_ID}}" aria-expanded="false" aria-controls="pastDonors{{trip.Pledge_ID}}">
+                <svg class="w-4 h-4 chevron" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.51611 0.666016L10.3638 9.5134L1.51611 18.3608" stroke="currentColor" stroke-width="1.61039"></path></svg> Show Donors
+              </button>
+            </div>
+            {% assign pastDonors = DataSet9 | where: 'Pledge_ID', trip.Pledge_ID %}
+            <div class="collapse mt-3" id="pastDonors{{trip.Pledge_ID}}">
+              <div class="card card-body">
+                <h4>Donors</h4>
+                <table class="table">
+                  {% for donor in pastDonors %}
+                  <tr>
+                    <td>{{donor.Donation_Date | date: "%m/%d/%Y"}}</td>
+                    <td>{{donor.Nickname}} {{donor.Last_Name}} </td>
+                    <td>{{donor.Address_Line_1}}<br>{{donor.City}}, {{donor.State}} {{donor.Postal_Code}}</td>
+                    <td>{{donor.Email_Address}}</td>
+                    <td>{{donor.Mobile_Phone}}</td>
+                  </tr>
+                  {% endfor %}
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <hr style="width:100%;text-align:left;margin-left:0">
+    {% endfor %}
+  </div>
+
