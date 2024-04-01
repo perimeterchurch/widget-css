@@ -212,17 +212,13 @@
   {% for trip in DataSet7 %}
   <div class="row mb-4 mt-3">
     <div class="col-10">        
-       <div class="col-4 buttonsrow">
-        <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#pastTrip{{trip.Pledge_ID}}" aria-expanded="false" aria-controls="pastTrip{{trip.Pledge_ID}}">
-          <svg class="w-4 h-4 chevron" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.51611 0.666016L10.3638 9.5134L1.51611 18.3608" stroke="currentColor" stroke-width="1.61039"></path></svg>
+         <h3 class="previous-name">
           {% if trip.Trip_Nickname %}
           {{trip.Trip_Nickname}}
           {% else %}
           {{trip.Destination_Name}} - {{trip.Trip_Start_Date | date: "%B %d, %Y"}}
           {% endif %}
-        </button>
-       </div>
-      <div class="collapse" id="pastTrip{{trip.Pledge_ID}}">
+         </h3>
         <div class="card card-body previous-card">
           <p>
             {{trip.Long_Description}}<br>
@@ -254,6 +250,6 @@
         </div>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
+
