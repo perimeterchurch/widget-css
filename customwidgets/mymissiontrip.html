@@ -205,3 +205,55 @@
 </div>
 {% endfor %}
 </div>
+
+
+<div class="previous-mission-trips">
+  <h2>Previous Mission Trips</h2>
+  {% for trip in DataSet7 %}
+  <div class="row mb-4 mt-3">
+    <div class="col-10">        
+      <h3>
+        <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#pastTrip{{trip.Pledge_ID}}" aria-expanded="false" aria-controls="pastTrip{{trip.Pledge_ID}}">
+          <img src="/MyMissionTrips/Assets/chevron.svg" class="chevron">
+          {% if trip.Trip_Nickname %}
+          {{trip.Trip_Nickname}}
+          {% else %}
+          {{trip.Destination_Name}} - {{trip.Trip_Start_Date | date: "%B %d, %Y"}}
+          {% endif %}
+        </button>
+      </h3>
+      <div class="collapse" id="pastTrip{{trip.Pledge_ID}}">
+        <div class="card card-body">
+          <p>
+            {{trip.Long_Description}}<br>
+          </p>
+          <div class="row mt-3">
+            <div class="col-4 buttonsrow">
+              <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#pastDonors{{trip.Pledge_ID}}" aria-expanded="false" aria-controls="pastDonors{{trip.Pledge_ID}}">
+                <img src="/MyMissionTrips/Assets/chevron.svg" class="chevron"> Show Donors
+              </button>
+            </div>
+            {% assign pastDonors = DataSet9 | where: 'Pledge_ID', trip.Pledge_ID %}
+            <div class="collapse mt-3" id="pastDonors{{trip.Pledge_ID}}">
+              <div class="card card-body">
+                <h4>Donors</h4>
+                <table class="table">
+                  {% for donor in pastDonors %}
+                  <tr>
+                    <td>{{donor.Donation_Date | date: "%m/%d/%Y"}}</td>
+                    <td>{{donor.Nickname}} {{donor.Last_Name}} </td>
+                    <td>{{donor.Address_Line_1}}<br>{{donor.City}}, {{donor.State}} {{donor.Postal_Code}}</td>
+                    <td>{{donor.Email_Address}}</td>
+                    <td>{{donor.Mobile_Phone}}</td>
+                  </tr>
+                  {% endfor %}
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
