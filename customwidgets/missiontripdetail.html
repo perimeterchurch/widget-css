@@ -16,34 +16,6 @@
     </div>
 </div>
         {% endfor %}
-<!-- </div>
-{% for elements in DataSet1 %}
-<div class="map-wrapper">
-        <img id="map-image" src="" alt="Map" style="width:100%;">
-        <script>
-            async function fetchMap() {
-                const location = encodeURIComponent('{{DataSet1.Destination_Name}}'); // Use the single record's destination
-                const fetchUrl = `https://Function-App-Testing.azurewebsites.net/api/GetStaticMap?location=${location}`;
-        
-                try {
-                    const response = await fetch(fetchUrl);
-                    const data = await response.json();
-        
-                    if (data.mapUrl) {
-                        document.getElementById('map-image').src = data.mapUrl;
-                    } else {
-                        console.error('Map URL not found in response');
-                    }
-                } catch (error) {
-                    console.error('Failed to fetch map:', error);
-                }
-            }
-        
-            // Call fetchMap when the page loads
-            fetchMap();
-        </script>
-   {% endfor %} 
-</div> -->
 
 <div class="details-wrapper">
     <div class="trip-participants">
@@ -52,14 +24,16 @@
 {% for elements in DataSet2 %}
 <a href="https://www.perimeter.org/pages/outreach-volunteer/global-outreach/global-outreach/pages/mission-trip-participant-detail/?pledge={{ elements.Pledge_ID }}">
 <div class="card">
-<div class="avatar">
+    <div class="avatar">
 {% if elements.Photo_URL %}
 <img src="{{elements.Photo_URL}}" alt="Person" style="width:100%">
 {% else %}
 <img src="https://cdn.jsdelivr.net/gh/perimeterchurch/widget-css@07451adc9a3cef9eed03741f87d8e315392a395a/customwidgets/defaultprof.png" alt="Person" style="width:100%">    
 {% endif %}
 </div>
+    <div class="card-info">
   <p class="card-title">{{elements.Full_Name}}</p>
+    </div>
 </div>
 </a>
             {% endfor %}
