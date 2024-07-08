@@ -1,208 +1,118 @@
-<div class="mission-trip">
-{% for element in DataSet1 %}
-<div class="row mb-4 mt-3">
-  <div class="col-10">        
-    <h3>{{element.Trip_Nickname}}
+ <div class="container">
+        {% for element in DataSet1 %}
+        <div class="mission-trip">
+            <div class="row mb-4 mt-3">
+                <div class="col-10">        
+                    <h3>{{element.Trip_Nickname}}
+                        {% if element.MyTrip == 0 %}
+                        -{{element.Nickname}} 
+                        {% endif %}
+                    </h3>
 
-    {% if element.MyTrip == 0 %}
-    -{{element.Nickname}} 
-    {% endif %}
-  </h3>
+                    <p>
+                        {{element.Long_Description}}<br>
+                    </p>
 
-  <p>
-    {{element.Long_Description}}<br>
-  </p>
+                    {% assign percentRaised = element.Total_Donations | divided_by: element.Total_Pledge | times: 100 %}
 
-    {% assign percentRaised = element.Total_Donations | divided_by: element.Total_Pledge | times: 100 %}
+                    {% if percentRaised > 100 %}
+                    {% assign percentRaised = 100 %}
+                    {% endif %}
 
-    {% if percentRaised > 100 %}
-    {% assign percentRaised = 100 %}
-    {% endif %}
+                    {% if percentRaised < 1 %}
+                    {% assign percentRaised = 0 %}
+                    {% endif %}
 
-    {% if percentRaised < 1 %}
-    {% assign percentRaised = 0 %}
-    {% endif %}
+                    {% assign tripLeader = DataSet3 | where: 'Pledge_Campaign_ID', element.Pledge_Campaign_ID | first %}
 
-    {% assign tripLeader = DataSet3 | where: 'Pledge_Campaign_ID', element.Pledge_Campaign_ID | first %}
+                    <div class="row mt-3">
+                        <div class="col-8 col-md-5">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped {% if percentRaised < 50 %} bg-warning {% elsif percentRaised > 75 %} bg-success {% endif %}" role="progressbar" style="width: {{percentRaised}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            My Funds Raised: <strong>{{element.Total_Donations | decimals: 2, "en-US" | prepend: "$" }}</strong> of {{element.Total_Pledge | decimals: 2, "en-US" | prepend: "$" }}
+                        </div>
+                    </div>
 
-    <div class="row mt-3">
-      <div class="col-8 col-md-5">
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped {% if percentRaised < 50 %} bg-warning {% elsif percentRaised > 75 %} bg-success {% endif %}" role="progressbar" style="width: {{percentRaised}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-        My Funds Raised: <strong>{{element.Total_Donations | decimals: 2, "en-US" | prepend: "$" }}</strong> of {{element.Total_Pledge | decimals: 2, "en-US" | prepend: "$" }}
+                    <div class="team-lead-header-wrapper">
+                        <h4 class="team-lead-header">Trip Leaders</h4>
+                    </div>
 
-      </div>
-    </div>
-    
+                    {% assign tripLeaderInfo = DataSet8 | where: 'Pledge_Campaign_ID', element.Pledge_Campaign_ID %}
+                    {% for element in tripLeaderInfo %}
+                    <div class="lead-email-wrapper">
+                        <div class="lead-info">
+                            <img src="{{element.Photo_URL}}" class="lead-picture">
+                            <a href="mailto:{{element.Leader_Email}}" class="lead-email">{{element.Full_Name}}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
 
-    <div class="team-lead-header-wrapper">
-      <h4 class="team-lead-header">Trip Leaders</h3>
-    </div>
+                    <!-- Trip Leader Resources Toggle -->
+                    {% if tripLeader.Pledge_Campaign_ID == element.Pledge_Campaign_ID %}
+                        {% if element.MyTrip == 1 %}
+                        <div class="toggle-section">
+                            <input type="checkbox" id="leader-toggle-{{element.Pledge_ID}}" class="toggle-input">
+                            <label for="leader-toggle-{{element.Pledge_ID}}" class="toggle-label">Trip Leader Resources</label>
+                            <div class="toggle-content">
+                                <!-- Trip Leader Resources content here -->
+                                <h4>Trip Leader Resources</h4>
+                                <p>Content for trip leaders goes here...</p>
+                            </div>
+                        </div>
+                        {% endif %}          
+                    {% endif %}
 
-    
-    {% assign tripLeaderInfo = DataSet8 | where: 'Pledge_Campaign_ID', element.Pledge_Campaign_ID %}
-    {% for element in tripLeaderInfo %}
-    <div class="lead-email-wrapper">
-      <div class="lead-info">
-        <img src="{{element.Photo_URL}}" class="lead-picture">
-        <a href="mailto:{{element.Leader_Email}}" class="lead-email">{{element.Full_Name}}</a>
-      </div>
-    </div>
-    {% endfor %}
- 
-    <div class="tab-wrapper-test">
-    
-    <div class="row mt-3">
-      <div class="col-4 buttonsrow">
-        {% if tripLeader.Pledge_Campaign_ID == element.Pledge_Campaign_ID %}
-          {% if element.MyTrip == 1 %}
-            <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#leader{{element.Pledge_ID}}" aria-expanded="false" aria-controls="leader{{element.Pledge_ID}}">
-               <svg class="w-4 h-4 chevron" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.51611 0.666016L10.3638 9.5134L1.51611 18.3608" stroke="currentColor" stroke-width="1.61039"></path></svg> Trip Leader Resources 
-            </button>
-          {% endif %}          
-        {% endif %}
-        </div>
-      
-        {% assign leaderParticipants = DataSet4 | where: 'Pledge_Campaign_ID', element.Pledge_Campaign_ID %}
+                    <!-- Show Donors Toggle -->
+                    <div class="toggle-section">
+                        <input type="checkbox" id="donors-toggle-{{element.Pledge_ID}}" class="toggle-input">
+                        <label for="donors-toggle-{{element.Pledge_ID}}" class="toggle-label">Show Donors</label>
+                        <div class="toggle-content">
+                            <h4>My Donors</h4>
+                            <table class="table">
+                                {% assign donors = DataSet2 | where: 'Pledge_ID', element.Pledge_ID %}
+                                {% for donor in donors %}
+                                <tr>
+                                    <td>{{donor.Donation_Date | date: "%m/%d/%Y"}}</td>
+                                    <td>${{donor.Amount}}</td>
+                                    <td>{{donor.Nickname}} {{donor.Last_Name}}</td>
+                                    <td>{{donor.Address_Line_1}}<br>{{donor.City}}, {{donor.State}} {{donor.Postal_Code}}</td>
+                                    <td>{{donor.Email_Address}}</td>
+                                    <td>{{donor.Mobile_Phone}}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
 
+                    <!-- View My Letter Toggle -->
+                    <div class="toggle-section">
+                        <input type="checkbox" id="letter-toggle-{{element.Pledge_ID}}" class="toggle-input">
+                        <label for="letter-toggle-{{element.Pledge_ID}}" class="toggle-label">View My Letter</label>
+                        <div class="toggle-content">
+                            <h4>My Letter</h4>
+                            {% assign pledges = DataSet5 | where: 'Pledge_ID', element.Pledge_ID %}
+                            {% for pledge in pledges %}
+                            <div class="letter-container">
+                                {% if pledge.Letter %}
+                                <div class="letter-text">{{pledge.Letter}}</div>
+                                {% else %}
+                                <div class="letter-text">
+                                    Dear [Name]<br>
+                                    [Where I'm going. Exact dates. Why I'm going.]<br>
+                                    [What the team will be doing, the needs of the people you will be serving]<br>
+                                    [Explain the reader's role as a prayer and/or financial supporter.]<br>
+                                    <br>
+                                    For the mission, my total cost is $_________, and we are individually responsible for raising our support. If you would like to join me in this opportunity to bless and be blessed, click the button above to donate. If I raise more than 100%, the additional funds will be allocated to the team fund, and, after that, used at the discretion of the Global Outreach Ministry Team.
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
 
-        {% assign tripPercent = tripLeader.Total_Donations | divided_by: tripLeader.Total_Goal | times: 100 %}
-    
-        {% if tripPercent > 100 %}
-        {% assign tripPercent = 100 %}
-        {% endif %}
-    
-        {% if tripPercent < 1 %}
-        {% assign tripPercent = 0 %}
-        {% endif %}
-    
-        <div class="collapse mt-3" id="leader{{element.Pledge_ID}}">
-          <div class="card card-body">
-            {% assign leaderEmail = DataSet6 | where: 'Pledge_Campaign_ID', element.Pledge_Campaign_ID %}
-            {% for elements in leaderEmail %}
-            <div>
-              <button class="emailButton">Email All Participants</button>
-              <input type="hidden" class="tripLeaderEmail" value="{{elements.Leader_Email}}">   
-              {% endfor %}    
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped {% if tripPercent < 50 %} bg-warning {% elsif tripPercent > 75 %} bg-success {% endif %}" role="progressbar" style="width: {{tripPercent}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
             </div>
-            Trip Funds Raised: <strong>{{tripLeader.Total_Donations | decimals: 2, "en-US" | prepend: "$" }}</strong> of {{tripLeader.Total_Goal | decimals: 2, "en-US" | prepend: "$" }}
-          </div>
-            <table class="table">
-              <tr>
-                <th>Participant</th>
-                <th>Fund Raising</th>
-              </tr>
-    
-            {% for mt in leaderParticipants %}
-            
-    
-            {% assign percentRaised = mt.Total_Donations | divided_by: mt.Total_Pledge | times: 100 %}
-    
-            {% if percentRaised > 100 %}
-            {% assign percentRaised = 100 %}
-            {% endif %}
-        
-            {% if percentRaised < 1 %}
-            {% assign percentRaised = 0 %}
-            {% endif %}
-          
-            
-            <tr>
-              <td>{{mt.Nickname}} {{mt.Last_Name}} </td>
-              <td> 
-                <input type="hidden" class="participant-email" value="{{mt.Email_Address}}" />
-                <div class="progress">
-                <div class="progress-bar progress-bar-striped {% if percentRaised < 50 %} bg-warning {% elsif percentRaised > 75 %} bg-success {% endif %}" role="progressbar" style="width: {{percentRaised}}%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              Trip Funds Raised: <strong>{{mt.Total_Donations | decimals: 2, "en-US" | prepend: "$" }}</strong> of {{mt.Total_Pledge | decimals: 2, "en-US" | prepend: "$" }}</td>
-            </tr>
-    
-            {% endfor %}
-          </table>
-         
-          </div>
-        </div>
-    
-        
-      </div>
-    <div class="row mt-3">
-      <div class="col-4 buttonsrow">
-        <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#donors{{element.Pledge_ID}}" aria-expanded="false" aria-controls="donors{{element.Pledge_ID}}">
-          <svg class="w-4 h-4 chevron" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.51611 0.666016L10.3638 9.5134L1.51611 18.3608" stroke="currentColor" stroke-width="1.61039"></path></svg>  Show Donors
-        </button>
-      </div>
-      {% assign donors = DataSet2 | where: 'Pledge_ID', element.Pledge_ID %}
-
-      <div class="collapse mt-3" id="donors{{element.Pledge_ID}}">
-        <div class="card card-body">
-          <h4>My Donors</h4>
-          <table class="table">
-          {% for donor in donors %}
-          <tr>
-            <td>{{donor.Donation_Date | date: "%m/%d/%Y"}}</td>
-            <td>${{donor.Amount}}</td>
-            <td>{{donor.Nickname}} {{donor.Last_Name}} </td>
-            <td>{{donor.Address_Line_1}}<br>{{donor.City}}, {{donor.State}} {{donor.Postal_Code}}</td>
-            <td>{{donor.Email_Address}}</td>
-            <td>{{donor.Mobile_Phone}}</td>
-          </tr>
-          {% endfor %}
-        </table>
-        <button class="export-button" onclick="exportTableToCSV('donors_data.csv', 'donors{{element.Pledge_ID}}')">Export to CSV</button>
-        </div>
-      </div>
-      </div>
-
-
-   
-
-      <div class="row mt-3">
-      <div class="col-4 buttonsrow">
-        <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#pledges{{element.Pledge_ID}}" aria-expanded="false" aria-controls="pledges{{element.Pledge_ID}}">
-           <svg class="w-4 h-4 chevron" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.51611 0.666016L10.3638 9.5134L1.51611 18.3608" stroke="currentColor" stroke-width="1.61039"></path></svg> View My Letter 
-        </button>  
-        </div>   
-    {% assign pledges = DataSet5 | where: 'Pledge_ID', element.Pledge_ID %}
-
-    <div class="collapse mt-3" id="pledges{{element.Pledge_ID}}">
-      <div class="go-card card card-body">
-        <h4>My Letter</h4>
-        {% for pledge in pledges %}
-       
-        <div class="letter-container">
-          {% if pledge.Letter %}
-          <div class="letter-text">{{pledge.Letter}}</div>
-          {% else %}
-          <div class="letter-text">Dear [Name]<br>
-            [Where I'm going.  Exact dates. Why I'm going.]<br>
-            
-            [What the team will be doing, the needs of the people you will be serving]<br>
-            
-            [Explain the reader's role as a prayer and/or financial supporter.]<br>
-            
-            <br>
-            
-            For the mission, my total cost is $_________, and we are individually responsible for raising our support. If you would like to join me in this opportunity to bless and be blessed, click the button above to donate. If I raise more than 100%, the additional funds will be allocated to the team fund, and, after that, used at the discretion of the Global Outreach Ministry Team.</div>
-          {% endif %}
-          <div class="quill-container">
-            <div class="quill-editor"></div>
-          </div>
-          <div class="button-container">
-            <button class="edit-btn" data-pledgeid="{{pledge.Pledge_ID}}">Edit My Letter</button>
-            <button class="save-btn" style="display: none;">Save Changes</button>
-            <button class="cancel-btn" style="display: none;">Cancel Changes</button>
-          </div>
         </div>
         {% endfor %}
-      </div>
     </div>
-</div>
-
-</div>
-  </div>
-</div>
-{% endfor %}
-</div>
