@@ -12,7 +12,7 @@
 <div class="description-wrapper">
     <p class="long-description">{{elements.Long_Description}}</p>
     <div class="button-container">
-        {% if registration_end_date < today_date or elements.Maximum_Registrants == elements.Num_Participants or elements.Invitation_Only == 1 %}
+       {% if registration_end_date < today_date or elements.Maximum_Registrants <= elements.Num_Participants or elements.Invitation_Only == 1 %}
                                         <div></div>
     {% else %}
         <a class="register-join nectar-button medium regular accent-color regular-button" role="button" href="https://devperimeterorg.kinsta.cloud/global-outreach/go-journey-application/?pledgecampaignid={{elements.Pledge_Campaign_ID}}">Register to Join</a>
