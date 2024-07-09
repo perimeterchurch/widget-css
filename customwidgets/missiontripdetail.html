@@ -12,12 +12,6 @@
 <div class="description-wrapper">
     <p class="long-description">{{elements.Long_Description}}</p>
     <div class="button-container">
-        <!-- Debugging Outputs -->
-  <p>Registration End Date: {{ registration_end_date }}</p>
-  <p>Today's Date: {{ today_date }}</p>
-  <p>Maximum Registrants: {{ elements.Maximum_Registrants }}</p>
-  <p>Number of Participants: {{ elements.Num_Participants }}</p>
-  <p>Invitation Only: {{ elements.Invitation_Only }}</p>
         {% if registration_end_date < today_date or elements.Maximum_Registrants == elements.Num_Participants or elements.Invitation_Only == 1 %}
                                         <div></div>
     {% else %}
