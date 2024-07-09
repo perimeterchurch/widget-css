@@ -1,6 +1,6 @@
     <div class="header-wrapper">
 {% for elements in DataSet1 %}
-        {% assign registration_end_date = element.Registration_End | date: "%s" %}
+        {% assign registration_end_date = elements.Registration_End | date: "%s" %}
   {% assign today_date = "now" | date: "%s" %}
     <img class="trip-hero" src="{{elements.Link}}" > 
     <div class="overlay">
@@ -15,10 +15,10 @@
         <!-- Debugging Outputs -->
   <p>Registration End Date: {{ registration_end_date }}</p>
   <p>Today's Date: {{ today_date }}</p>
-  <p>Maximum Registrants: {{ element.Maximum_Registrants }}</p>
-  <p>Number of Participants: {{ element.Num_Participants }}</p>
-  <p>Invitation Only: {{ element.Invitation_Only }}</p>
-        {% if registration_end_date < today_date or element.Maximum_Registrants == element.Num_Participants or element.Invitation_Only == 1 %}
+  <p>Maximum Registrants: {{ elements.Maximum_Registrants }}</p>
+  <p>Number of Participants: {{ elements.Num_Participants }}</p>
+  <p>Invitation Only: {{ elements.Invitation_Only }}</p>
+        {% if registration_end_date < today_date or elements.Maximum_Registrants == elements.Num_Participants or elements.Invitation_Only == 1 %}
                                         <div></div>
     {% else %}
         <a class="register-join nectar-button medium regular accent-color regular-button" role="button" href="https://devperimeterorg.kinsta.cloud/global-outreach/go-journey-application/?pledgecampaignid={{elements.Pledge_Campaign_ID}}">Register to Join</a>
