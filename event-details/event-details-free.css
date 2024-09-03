@@ -1,3 +1,8 @@
+/* Hides the funky ics link glitch at the bottom of the page on mobile */
+.mppw-ics-link {
+	display: none !important;
+}
+
 #updateMyInfoContainer.mppw-form-field {
 	display: none !important;
 }
