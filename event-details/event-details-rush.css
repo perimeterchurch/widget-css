@@ -32,7 +32,7 @@
 /* Adjust labeling text size, color and padding */
 .mppw-form-field__alt-label {
     display: block;
-    margin-bottom: 1.5em;
+    margin-bottom: 0em !important;
     font-size: 16px;
     padding: 15px;
 }
