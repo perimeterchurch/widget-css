@@ -1,0 +1,100 @@
+#registrationTotalContainer h3 {
+	font-size: 30px;
+}
+
+
+#registerAndCheckoutButton {
+	background-color: #c81f4b;
+	color: #fffff;
+	font-family: Muli, sans-serif;
+	font-weight: 800 !important;
+	padding: 7px 25px;
+	font-size: 23px;
+	text-transform: uppercase;
+	border-radius: 0px;
+	box-shadow: none;
+	letter-spacing: 5px !important;
+}
+#addAnotherButton {
+	display: none;
+}
+
+
+
+.mppw-ics-link, #detailsContainer > strong {
+	display: none !important;
+}
+
+/* Gets rid of the stray text showing up on mobile, doesn't affect other text in this container */
+#detailsContainer {
+	font-size: 0px;
+}
+/* Adjust labeling text size, color and padding */
+.mppw-form-field__alt-label {
+    display: block;
+    margin-bottom: 0em !important;
+    font-size: 16px;
+    padding: 15px;
+}
+.mppw-form-field__control {
+    font-size: 16px;
+    color: #262626;
+    padding: 15px;
+}
+
+@media only screen and (max-width: 415px) {
+.mpp-innerpage--map-info {
+	display: none !important;
+}
+}
+
+.mpp-innerpage--map-info {
+	display: none !important;
+}
+
+@media only screen and (max-width: 415px) {
+.mpp-innerpage--map-container {
+    display: none !important;
+}
+}
+
+#updateMyInfoContainer.mppw-form-field {
+	display: none !important;
+}
+
+.mpp-innerpage--back {
+	display: none !important;
+}
+
+#mapContainer {
+    display: none !important;
+}
+#map {
+    display: none;
+}
+#mapAddress {
+    display: none;
+}
+
+.mppw-product-description {
+    font-family: 'sweet-sans-pro', 'Noto Sans', Helvetica, sans-serif;
+    color: red;
+}
+.mppw-product-options {
+    font-family: 'sweet-sans-pro', 'Noto Sans', Helvetica, sans-serif;
+    color: #111111;
+    font-size: 16px;
+}
+
+
+div#priceContainer {
+    display: none !important;
+}
+
+/*--------------------------------------------*/
+/* CSS Color Variables                        */
+/*--------------------------------------------*/
+:host {
+    --form-field-border: #09243F;
+    --form-field-border--active: #09243F;
+}
