@@ -91,6 +91,10 @@ div#priceContainer {
     display: none !important;
 }
 
+.mpp-innerpage--fixed-imgcontainer {
+    display: none;
+}
+
 /*--------------------------------------------*/
 /* CSS Color Variables                        */
 /*--------------------------------------------*/
